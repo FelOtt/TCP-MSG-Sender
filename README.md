@@ -12,4 +12,4 @@ When the Server is started you can type in the IP of the Server machine in the c
 
 
 ### Anyways - Have Fun!
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)]([felix.otte.2006@gmail.com](https://www.paypal.com/donate/?hosted_button_id=4ANVCJT8ZZCEA)https://www.paypal.com/donate/?hosted_button_id=4ANVCJT8ZZCEA)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=4ANVCJT8ZZCEA)
