@@ -1,0 +1,7 @@
+C:\Users\felix\source\repos\MSG_Sever\MSG_Sever\bin\Debug\MSG_Sever.exe.config
+C:\Users\felix\source\repos\MSG_Sever\MSG_Sever\bin\Debug\MSG_Sever.exe
+C:\Users\felix\source\repos\MSG_Sever\MSG_Sever\bin\Debug\MSG_Sever.pdb
+C:\Users\felix\source\repos\MSG_Sever\MSG_Sever\obj\Debug\MSG_Sever.csproj.AssemblyReference.cache
+C:\Users\felix\source\repos\MSG_Sever\MSG_Sever\obj\Debug\MSG_Sever.csproj.CoreCompileInputs.cache
+C:\Users\felix\source\repos\MSG_Sever\MSG_Sever\obj\Debug\MSG_Sever.exe
+C:\Users\felix\source\repos\MSG_Sever\MSG_Sever\obj\Debug\MSG_Sever.pdb
