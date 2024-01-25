@@ -1,0 +1,7 @@
+C:\Users\felix\source\repos\MSG_Client\MSG_Client\bin\Debug\MSG_Client.exe.config
+C:\Users\felix\source\repos\MSG_Client\MSG_Client\bin\Debug\MSG_Client.exe
+C:\Users\felix\source\repos\MSG_Client\MSG_Client\bin\Debug\MSG_Client.pdb
+C:\Users\felix\source\repos\MSG_Client\MSG_Client\obj\Debug\MSG_Client.csproj.AssemblyReference.cache
+C:\Users\felix\source\repos\MSG_Client\MSG_Client\obj\Debug\MSG_Client.csproj.CoreCompileInputs.cache
+C:\Users\felix\source\repos\MSG_Client\MSG_Client\obj\Debug\MSG_Client.exe
+C:\Users\felix\source\repos\MSG_Client\MSG_Client\obj\Debug\MSG_Client.pdb
