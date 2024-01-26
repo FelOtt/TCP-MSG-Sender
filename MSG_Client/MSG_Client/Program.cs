@@ -13,34 +13,60 @@ namespace MSG_Client
 
         static void Main(string[] args)
         {
-            Console.Write("Enter server IP address or domain: ");
-            string serverAddress = Console.ReadLine();
-
-            Console.Write("Enter your nickname: ");
-            nickname = Console.ReadLine();
-
-            try
+            while (true)
             {
-                client = new TcpClient(serverAddress, 8888);
-                clientStream = client.GetStream();
+                Console.Write("Enter server IP address or domain, or write exit to close: ");
+                string serverAddress = Console.ReadLine();
 
-                Thread receiveThread = new Thread(new ThreadStart(ReceiveMessages));
-                receiveThread.Start();
-
-                while (true)
+                if(serverAddress == "exit")
                 {
-                    string message = Console.ReadLine();
-                    SendMessage($"{nickname}:\n{message}\n");
+                    break;
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-            finally
-            {
-                clientStream.Close();
-                client.Close();
+
+                Console.Write("Enter your nickname: ");
+                nickname = Console.ReadLine();
+
+                try
+                {
+                    client = new TcpClient(serverAddress, 8888);
+                    clientStream = client.GetStream();
+
+                    Thread receiveThread = new Thread(new ThreadStart(ReceiveMessages));
+                    receiveThread.Start();
+                    Console.WriteLine("Connected to the server.");
+
+                    while (true)
+                    {
+                        string message = Console.ReadLine();
+                        SendMessage($"{nickname}:\n{message}\n");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    try
+                    {
+                        if (clientStream != null)
+                        {
+                            clientStream.Close();
+                        }
+                    }
+                    catch
+                    {
+                        throw new Exception("Error: Unable to close the network stream.");
+                    }
+                    finally
+                    {
+                        if (client != null)
+                        {
+                            client.Close();
+                        }
+                    }
+                }
+                Console.Clear();
             }
         }
 
