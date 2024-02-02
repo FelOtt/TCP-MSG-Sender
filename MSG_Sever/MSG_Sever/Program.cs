@@ -12,14 +12,17 @@ namespace MSG_Sever
         static TcpListener server;
         static List<TcpClient> clients = new List<TcpClient>();
         static object lockObject = new object();
-
+        static int port = 0;
         static void Main(string[] args)
         {
+            Console.Title = "Msg_Server by darthmaus";
+            Console.WriteLine("Press 'Q' to shut down the server.");
+            Console.Write("Select port to listen on: ");
+            port = int.Parse(Console.ReadLine());
             StartServer();
             Thread listenThread = new Thread(new ThreadStart(ListenForClients));
             listenThread.Start();
-            Console.Title = "Msg_Server by darthmaus";
-            Console.WriteLine("Press 'Q' to shut down the server.");
+            
             while (true)
             {
                 if (Console.ReadKey().Key == ConsoleKey.Q)
@@ -33,9 +36,9 @@ namespace MSG_Sever
 
         static void StartServer()
         {
-            server = new TcpListener(IPAddress.Any, 8888);
+            server = new TcpListener(IPAddress.Any, port);
             server.Start();
-            Console.WriteLine("Server started on port 8888");
+            Console.WriteLine($"Server started on port {port}");
         }
 
         static void CloseServer()

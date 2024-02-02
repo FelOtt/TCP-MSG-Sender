@@ -15,10 +15,14 @@ namespace MSG_Client
         {
             while (true)
             {
-                Console.Write("Enter server IP address or domain, or write exit to close: ");
-                string serverAddress = Console.ReadLine();
+                Console.Write("Enter server IP address or domain + port [Format: example.com:1234 or 1.2.3.4:1234], or write exit to close: ");
+                
+                // Split the input to get the server address and port
+                string serverAddressInput = Console.ReadLine();
+                string serverAddress = serverAddressInput.Split(':')[0];
+                int serverPort = Convert.ToInt32(serverAddressInput.Split(':')[1]);
 
-                if(serverAddress == "exit")
+                if (serverAddress == "exit")
                 {
                     break;
                 }
@@ -28,7 +32,7 @@ namespace MSG_Client
 
                 try
                 {
-                    client = new TcpClient(serverAddress, 8888);
+                    client = new TcpClient(serverAddress, serverPort);
                     clientStream = client.GetStream();
 
                     Thread receiveThread = new Thread(new ThreadStart(ReceiveMessages));
